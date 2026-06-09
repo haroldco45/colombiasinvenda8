@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colombia Sin Venda — Día 8: Las Mujeres del Conflicto</title>
+<meta name="description" content="400.000 mujeres víctimas de homicidio. 2.700.000 desplazadas. 53% de la violencia sexual cometida por las guerrillas. La historia que no se cuenta.">
+<meta property="og:title" content="Colombia Sin Venda — Día 8: Las Mujeres del Conflicto">
+<meta property="og:description" content="43 de cada 100 mujeres afectadas por el conflicto fueron víctimas de violencia de género. Ellas cargaron el peso más pesado de la guerra.">
+<meta property="og:image" content="https://placehold.co/1200x630/0f0008/ff6eb4?text=Las+Mujeres+del+Conflicto">
+<meta property="og:url" content="https://haroldco45.github.io/colombia-sin-venda/dia08">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f0008">
+<link rel="manifest" href="#" id="manifest-link">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;600;700&family=Courier+Prime:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#ff6eb4;
+  --rosa-dim:#c2185b;
+  --rosa-s:rgba(255,110,180,0.1);
+  --lila:#ce93d8;
+  --dorado:#f4c842;
+  --rojo:#ff4560;
+  --fondo:#0f0008;
+  --panel:#160010;
+  --panel2:#1c0016;
+  --borde:rgba(255,110,180,0.18);
+  --borde-f:rgba(255,110,180,0.45);
+  --crema:#fdf0f5;
+  --texto:#c8a0b8;
+  --dim:#7a5570;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--fondo);color:var(--crema);font-family:'Raleway',sans-serif;overflow-x:hidden;}
+
+/* ── INTRO ── */
+#intro{
+  position:fixed;inset:0;background:var(--fondo);z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;padding:2rem;
+  animation:killI .5s ease 4s forwards;
+}
+.intro-flores{
+  font-size:3rem;opacity:0;
+  animation:fU .5s ease .3s forwards;
+  letter-spacing:.3em;
+}
+.intro-titulo{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(1.6rem,7vw,2.6rem);
+  color:var(--crema);text-align:center;
+  opacity:0;animation:fU .5s ease .9s forwards;
+  line-height:1.1;
+}
+.intro-titulo em{color:var(--rosa);font-style:italic;}
+.intro-sub{
+  font-family:'Courier Prime',monospace;font-size:.6rem;
+  letter-spacing:.22em;color:var(--rosa);
+  opacity:0;animation:fU .4s ease 1.5s forwards;
+}
+.intro-cita{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:.95rem;color:var(--texto);text-align:center;
+  max-width:300px;line-height:1.65;
+  opacity:0;animation:fU .5s ease 2.1s forwards;
+}
+.intro-linea{
+  width:0;height:1px;background:var(--rosa);opacity:0;
+  animation:fU .3s ease 2.8s forwards,growW .6s ease 2.8s forwards;
+}
+@keyframes fU{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes killI{to{opacity:0;pointer-events:none;}}
+@keyframes growW{to{width:160px;}}
+
+/* ── HEADER ── */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(15,0,8,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--borde);
+  padding:.75rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.h-logo{font-family:'Courier Prime',monospace;font-size:.75rem;letter-spacing:.1em;}
+.h-logo em{color:var(--rosa);font-style:normal;}
+.h-dia{
+  font-family:'Courier Prime',monospace;font-size:.56rem;
+  color:var(--rosa);background:var(--rosa-s);
+  border:1px solid var(--borde-f);padding:.22rem .55rem;letter-spacing:.1em;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:90vh;display:flex;flex-direction:column;justify-content:center;
+  padding:3rem 1.4rem 3.5rem;position:relative;overflow:hidden;
+}
+.hero-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 20%,rgba(255,110,180,.09) 0%,transparent 55%),
+             radial-gradient(ellipse at 20% 80%,rgba(206,147,216,.05) 0%,transparent 50%);
+  pointer-events:none;
+}
+/* flores flotantes de fondo */
+.hero-petals{
+  position:absolute;inset:0;pointer-events:none;overflow:hidden;
+  font-size:1.5rem;opacity:.06;
+  user-select:none;
+}
+.petal{position:absolute;animation:floatPetal linear infinite;}
+@keyframes floatPetal{
+  from{transform:translateY(100vh) rotate(0deg);}
+  to{transform:translateY(-10vh) rotate(360deg);}
+}
+.hero-eyebrow{
+  font-family:'Courier Prime',monospace;font-size:.62rem;
+  color:var(--rosa);letter-spacing:.2em;margin-bottom:1.2rem;
+  opacity:0;animation:fU .5s ease 4.2s forwards;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(3rem,11vw,7rem);line-height:.9;
+  margin-bottom:1.8rem;
+  opacity:0;animation:fU .7s ease 4.4s forwards;
+}
+.hero-title .tR{color:var(--rosa);}
+.hero-title .tI{font-style:italic;font-weight:700;color:var(--lila);}
+.hero-desc{
+  font-size:1.05rem;font-weight:300;line-height:1.8;
+  color:var(--texto);max-width:500px;margin-bottom:2.2rem;
+  opacity:0;animation:fU .6s ease 4.6s forwards;
+}
+.hero-nums{
+  display:flex;gap:1.8rem;flex-wrap:wrap;
+  opacity:0;animation:fU .5s ease 4.8s forwards;
+}
+.hn{display:flex;flex-direction:column;}
+.hn-n{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:2rem;color:var(--crema);line-height:1;
+}
+.hn-n span{color:var(--rosa);}
+.hn-l{
+  font-family:'Courier Prime',monospace;font-size:.52rem;
+  color:var(--dim);letter-spacing:.1em;margin-top:.2rem;line-height:1.4;
+}
+
+/* ── RETO ── */
+.reto-strip{
+  background:rgba(255,110,180,.03);
+  border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);
+  padding:1.1rem 1.4rem;
+}
+.reto-tag{
+  font-family:'Courier Prime',monospace;font-size:.56rem;
+  color:var(--dim);letter-spacing:.15em;margin-bottom:.6rem;
+}
+.reto-dots{display:flex;gap:4px;flex-wrap:wrap;}
+.dot{width:14px;height:14px;border-radius:2px;background:rgba(255,255,255,.05);}
+.dot.done{background:rgba(255,110,180,.45);}
+.dot.hoy{background:var(--rosa);box-shadow:0 0 10px rgba(255,110,180,.55);}
+
+/* ── SECCIONES ── */
+.sec{padding:3.2rem 1.4rem;position:relative;z-index:1;}
+.sec-alt{background:var(--panel);}
+.sec-tag{
+  font-family:'Courier Prime',monospace;font-size:.58rem;
+  color:var(--rosa);letter-spacing:.18em;margin-bottom:.5rem;
+}
+.sec-title{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(2rem,7vw,3rem);line-height:1.05;
+  color:var(--crema);margin-bottom:1.8rem;
+}
+.sec-title em{color:var(--rosa);font-style:italic;}
+
+/* ── CIFRAS GRID ── */
+.cifras-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.cifra-card{
+  background:var(--panel2);border-radius:4px;
+  padding:1.4rem 1.1rem;
+  border-top:3px solid var(--rosa);
+  position:relative;overflow:hidden;
+  transition:transform .2s ease;
+}
+.cifra-card:hover{transform:translateY(-3px);}
+.cifra-card.lila{border-top-color:var(--lila);}
+.cifra-card.dorado{border-top-color:var(--dorado);}
+.cifra-card.rojo{border-top-color:var(--rojo);}
+.cifra-num{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(1.8rem,6vw,2.5rem);
+  color:var(--rosa);line-height:1;margin-bottom:.4rem;
+}
+.cifra-card.lila .cifra-num{color:var(--lila);}
+.cifra-card.dorado .cifra-num{color:var(--dorado);}
+.cifra-card.rojo .cifra-num{color:var(--rojo);}
+.cifra-label{
+  font-family:'Courier Prime',monospace;font-size:.56rem;
+  color:var(--dim);letter-spacing:.06em;line-height:1.5;
+}
+.cifra-icono{
+  position:absolute;top:.8rem;right:.9rem;
+  font-size:1.5rem;opacity:.12;
+}
+
+/* ── VIOLENCIA SEXUAL BARRAS ── */
+.vs-nota{
+  font-size:.88rem;font-weight:300;line-height:1.75;
+  color:var(--texto);margin-bottom:1.5rem;
+  border-left:2px solid var(--rosa);
+  padding-left:1rem;font-style:italic;
+}
+.vs-bars{display:flex;flex-direction:column;gap:1rem;}
+.vs-row{}
+.vs-head{
+  display:flex;justify-content:space-between;
+  font-family:'Courier Prime',monospace;font-size:.65rem;
+  letter-spacing:.06em;margin-bottom:.45rem;
+}
+.vs-name{color:var(--crema);}
+.vs-pct{color:var(--rosa);}
+.vs-track{height:8px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.vs-fill{
+  height:100%;border-radius:2px;width:0;
+  transition:width 1.6s cubic-bezier(.16,1,.3,1);
+}
+.f-rosa{background:var(--rosa);}
+.f-lila{background:var(--lila);}
+.f-gris{background:#666;}
+.vs-sub{
+  font-family:'Courier Prime',monospace;font-size:.55rem;
+  color:var(--dim);margin-top:.3rem;letter-spacing:.05em;
+}
+
+/* ── TIPOS DE VIOLENCIA ── */
+.tipos-list{display:flex;flex-direction:column;gap:.9rem;}
+.tipo{
+  background:var(--panel2);border-radius:4px;
+  padding:1rem 1.2rem;
+  border-left:3px solid var(--rosa);
+  display:flex;gap:.9rem;align-items:flex-start;
+}
+.tipo-emoji{font-size:1.3rem;flex-shrink:0;margin-top:2px;}
+.tipo-titulo{
+  font-family:'Playfair Display',serif;font-weight:700;
+  font-size:1rem;color:var(--crema);margin-bottom:.3rem;
+  letter-spacing:.02em;
+}
+.tipo-desc{
+  font-size:.88rem;font-weight:300;line-height:1.65;color:var(--texto);
+}
+.tipo-dato{
+  font-family:'Courier Prime',monospace;font-size:.58rem;
+  color:var(--rosa);margin-top:.4rem;letter-spacing:.06em;
+}
+
+/* ── HISTORIAS / TESTIMONIOS ── */
+.historias-list{display:flex;flex-direction:column;gap:1.2rem;}
+.historia{
+  background:var(--panel2);border-radius:4px;
+  padding:1.3rem 1.2rem;
+  border-left:3px solid var(--lila);
+  position:relative;overflow:hidden;
+}
+.historia::after{
+  content:'"';
+  position:absolute;bottom:-.5rem;right:.8rem;
+  font-family:'Playfair Display',serif;
+  font-size:6rem;color:rgba(206,147,216,.06);line-height:1;
+}
+.hist-nombre{
+  font-family:'Playfair Display',serif;font-weight:700;
+  font-size:1rem;color:var(--crema);margin-bottom:.2rem;
+}
+.hist-meta{
+  font-family:'Courier Prime',monospace;font-size:.56rem;
+  color:var(--lila);letter-spacing:.1em;margin-bottom:.6rem;
+}
+.hist-texto{
+  font-size:.94rem;font-weight:300;font-style:italic;
+  line-height:1.75;color:var(--texto);
+}
+.hist-resultado{
+  display:inline-block;margin-top:.6rem;
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  color:var(--dorado);background:rgba(244,200,66,.07);
+  border:1px solid rgba(244,200,66,.2);
+  padding:.18rem .55rem;border-radius:2px;letter-spacing:.08em;
+}
+
+/* ── RESISTENCIA ── */
+.resist-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.resist-card{
+  background:var(--panel2);border-radius:4px;
+  padding:1rem;border-bottom:2px solid var(--dorado);
+}
+.rc-emoji{font-size:1.3rem;margin-bottom:.4rem;display:block;}
+.rc-titulo{
+  font-family:'Playfair Display',serif;font-weight:700;
+  font-size:.9rem;color:var(--crema);margin-bottom:.25rem;
+}
+.rc-desc{
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  color:var(--dim);line-height:1.5;
+}
+
+/* ── LIDERESAS HOY ── */
+.lideresas-list{display:flex;flex-direction:column;gap:.7rem;}
+.lideresa{
+  background:var(--panel2);border-radius:3px;
+  padding:.9rem 1.1rem;
+  display:flex;align-items:center;gap:.9rem;
+}
+.ld-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--rojo);flex-shrink:0;
+  box-shadow:0 0 8px rgba(255,69,96,.5);
+  animation:pRed 1.5s ease infinite;
+}
+@keyframes pRed{
+  0%,100%{box-shadow:0 0 5px rgba(255,69,96,.4);}
+  50%{box-shadow:0 0 14px rgba(255,69,96,.8);}
+}
+.ld-nombre{
+  font-family:'Playfair Display',serif;font-weight:700;
+  font-size:.9rem;color:var(--crema);flex:1;
+}
+.ld-dato{
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  color:var(--dim);letter-spacing:.05em;flex:2;line-height:1.4;
+}
+
+/* ── REFLEXIÓN ── */
+.ref-sec{
+  padding:3.5rem 1.4rem;background:var(--panel);
+  text-align:center;position:relative;z-index:1;
+}
+.ref-flores{
+  font-size:2.5rem;opacity:.2;letter-spacing:.5em;
+  margin-bottom:1rem;display:block;
+}
+.ref-quote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.1rem,4vw,1.4rem);font-style:italic;
+  line-height:1.8;color:var(--crema);
+  max-width:460px;margin:0 auto 1.2rem;
+}
+.ref-cite{
+  font-family:'Courier Prime',monospace;font-size:.58rem;
+  color:var(--rosa);letter-spacing:.15em;
+}
+
+/* ── CTA ── */
+.cta-sec{padding:3rem 1.4rem;text-align:center;position:relative;z-index:1;}
+.cta-title{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:2rem;color:var(--crema);margin-bottom:.7rem;
+}
+.cta-body{
+  font-weight:300;font-size:.92rem;color:var(--texto);
+  max-width:360px;margin:0 auto 2rem;line-height:1.65;font-style:italic;
+}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:#25D366;color:white;
+  font-family:'Courier Prime',monospace;font-size:.72rem;
+  letter-spacing:.08em;padding:.9rem 1.8rem;
+  border-radius:4px;border:none;cursor:pointer;text-decoration:none;
+  transition:transform .15s,box-shadow .15s;margin-bottom:1.5rem;
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3);}
+.nav-dias{
+  font-family:'Courier Prime',monospace;font-size:.58rem;
+  color:var(--dim);letter-spacing:.08em;
+}
+.nav-dias span{color:var(--rosa);}
+
+/* ── INSTALL ── */
+#install-banner{
+  position:fixed;bottom:0;left:0;right:0;background:var(--panel);
+  border-top:2px solid var(--rosa);padding:1rem 1.4rem;
+  display:none;align-items:center;justify-content:space-between;gap:1rem;z-index:1000;
+}
+#install-banner.on{display:flex;}
+.ib-txt{font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--crema);line-height:1.5;}
+.ib-txt strong{color:var(--rosa);display:block;}
+.btn-ib{background:var(--rosa-dim);color:white;border:none;border-radius:3px;
+  font-family:'Courier Prime',monospace;font-size:.62rem;
+  padding:.55rem .9rem;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.btn-x{background:none;border:none;color:var(--dim);font-size:1.2rem;cursor:pointer;flex-shrink:0;}
+
+/* ── FOOTER ── */
+footer{
+  padding:2rem 1.4rem;text-align:center;
+  border-top:1px solid var(--borde);
+  font-family:'Courier Prime',monospace;font-size:.54rem;
+  color:var(--dim);letter-spacing:.1em;line-height:1.9;
+  position:relative;z-index:1;
+}
+footer strong{color:var(--rosa);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s;}
+.reveal.on{opacity:1;transform:none;}
+
+/* contador animado */
+.counter{display:inline;}
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-flores">🌸 🕊️ 🌸</div>
+  <div class="intro-titulo">Las <em>Mujeres</em><br>del Conflicto</div>
+  <div class="intro-sub">COLOMBIA SIN VENDA · DÍA 08 / 20</div>
+  <div class="intro-linea"></div>
+  <p class="intro-cita">"Ellas cargaron el peso más pesado de la guerra — y nadie las nombra."</p>
+</div>
+
+<!-- INSTALL -->
+<div id="install-banner">
+  <div class="ib-txt"><strong>📲 Instala Colombia Sin Venda</strong>20 días · offline</div>
+  <button class="btn-ib" id="btn-inst">INSTALAR</button>
+  <button class="btn-x" id="btn-x">✕</button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="h-logo">COLOMBIA <em>SIN VENDA</em></div>
+  <div class="h-dia">DÍA 08 / 20</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-petals" id="petals"></div>
+
+  <p class="hero-eyebrow">🌸 Las víctimas que la guerra silenció</p>
+  <h1 class="hero-title">
+    LAS<br>
+    <span class="tR">MUJERES</span><br>
+    <span class="tI">del conflicto</span>
+  </h1>
+  <p class="hero-desc">
+    El conflicto armado en Colombia tuvo un rostro femenino que muy pocos quieren mirar.
+    Fueron desplazadas, violadas, asesinadas, amenazadas y silenciadas.
+    Y muchas de esas violencias las cometió la guerrilla que decía luchar "por el pueblo".
+  </p>
+  <div class="hero-nums">
+    <div class="hn">
+      <div class="hn-n"><span class="counter" data-target="400000" data-prefix="+">0</span></div>
+      <div class="hn-l">MUJERES VÍCTIMAS<br>DE HOMICIDIO · ONU MUJERES</div>
+    </div>
+    <div class="hn">
+      <div class="hn-n"><span class="counter" data-target="2700000" data-prefix="">0</span></div>
+      <div class="hn-l">DESPLAZADAS<br>1995–2011</div>
+    </div>
+    <div class="hn">
+      <div class="hn-n"><span class="counter" data-target="43" data-prefix="">0</span><span style="font-size:1.4rem;color:var(--rosa)">%</span></div>
+      <div class="hn-l">VÍCTIMAS CON<br>VIOLENCIA DE GÉNERO</div>
+    </div>
+  </div>
+</section>
+
+<!-- RETO -->
+<div class="reto-strip reveal">
+  <div class="reto-tag">▶ RETO 20 DÍAS DE VERDAD — Colombia Sin Venda</div>
+  <div class="reto-dots" id="dots"></div>
+</div>
+
+<!-- CIFRAS PRINCIPALES -->
+<section class="sec reveal">
+  <p class="sec-tag">// 01 — el costo humano</p>
+  <h2 class="sec-title">LO QUE<br><em>Les hicieron</em></h2>
+
+  <div class="cifras-grid">
+    <div class="cifra-card">
+      <span class="cifra-icono">🏚️</span>
+      <div class="cifra-num">51%</div>
+      <div class="cifra-label">Del total de desplazados eran mujeres · mayoría de ellas cabeza de hogar</div>
+    </div>
+    <div class="cifra-card lila">
+      <span class="cifra-icono">⚠️</span>
+      <div class="cifra-num">15,8%</div>
+      <div class="cifra-label">De las desplazadas declaran haber sido víctimas de violencia sexual · ONU</div>
+    </div>
+    <div class="cifra-card dorado">
+      <span class="cifra-icono">👩‍⚖️</span>
+      <div class="cifra-num">609</div>
+      <div class="cifra-label">Líderes y lideresas asesinadas entre 2009–2018 · Somos Defensores</div>
+    </div>
+    <div class="cifra-card rojo">
+      <span class="cifra-icono">📈</span>
+      <div class="cifra-num">133%</div>
+      <div class="cifra-label">Aumento en el asesinato de lideresas entre 2016 y 2018, tras el acuerdo de paz</div>
+    </div>
+    <div class="cifra-card">
+      <span class="cifra-icono">💔</span>
+      <div class="cifra-num">1.344</div>
+      <div class="cifra-label">Víctimas documentadas de violencia sexual entre 1988–2012 · CNMH</div>
+    </div>
+    <div class="cifra-card lila">
+      <span class="cifra-icono">🌺</span>
+      <div class="cifra-num">57.000+</div>
+      <div class="cifra-label">Mujeres víctimas de desplazamiento forzado registradas actualmente</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIOLENCIA SEXUAL - RESPONSABLES -->
+<section class="sec sec-alt reveal">
+  <p class="sec-tag">// 02 — quién cometió la violencia sexual</p>
+  <h2 class="sec-title">LA VERDAD<br><em>que nadie cuenta</em></h2>
+
+  <p class="vs-nota">
+    La violencia sexual fue utilizada sistemáticamente como arma de guerra por todos los actores del conflicto.
+    Pero los datos muestran con claridad quién fue el principal responsable.
+    Fuente: CNMH · 1988–2012.
+  </p>
+
+  <div class="vs-bars">
+    <div class="vs-row">
+      <div class="vs-head">
+        <span class="vs-name">Guerrillas (FARC + ELN)</span>
+        <span class="vs-pct">53,3%</span>
+      </div>
+      <div class="vs-track"><div class="vs-fill f-rosa" data-w="53"></div></div>
+      <div class="vs-sub">Mayor perpetrador de violencia sexual en el conflicto · CNMH · 59% violación sexual</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-head">
+        <span class="vs-name">Paramilitares</span>
+        <span class="vs-pct">~35%</span>
+      </div>
+      <div class="vs-track"><div class="vs-fill f-gris" data-w="35"></div></div>
+      <div class="vs-sub">53,5% violación sexual · 13% acoso sexual · Zonas de dominio paramilitar</div>
+    </div>
+    <div class="vs-row">
+      <div class="vs-head">
+        <span class="vs-name">Agentes del Estado</span>
+        <span class="vs-pct">~12%</span>
+      </div>
+      <div class="vs-track"><div class="vs-fill f-lila" data-w="12"></div></div>
+      <div class="vs-sub">40,5% violación sexual · También cometieron crímenes documentados</div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.5rem;background:rgba(255,110,180,.07);border:1px solid rgba(255,110,180,.25);border-radius:4px;padding:1.2rem;">
+    <div style="font-family:'Courier Prime',monospace;font-size:.58rem;color:var(--rosa);letter-spacing:.1em;margin-bottom:.5rem;">⚠️ CONTEXTO IMPORTANTE</div>
+    <p style="font-size:.9rem;font-weight:300;line-height:1.7;color:var(--texto);font-style:italic;">
+      Estas cifras representan solo los casos documentados y reportados. Los expertos estiman
+      que la violencia sexual en el conflicto tiene un <strong style="color:var(--crema);font-style:normal;">subregistro superior al 80%</strong>
+      por el miedo, el estigma y la falta de acceso a la justicia en zonas rurales.
+      La cifra real es mucho mayor.
+    </p>
+  </div>
+</section>
+
+<!-- TIPOS DE VIOLENCIA -->
+<section class="sec reveal">
+  <p class="sec-tag">// 03 — las formas del horror</p>
+  <h2 class="sec-title">CÓMO LAS<br><em>violentaron</em></h2>
+
+  <div class="tipos-list">
+    <div class="tipo">
+      <div class="tipo-emoji">🏚️</div>
+      <div>
+        <div class="tipo-titulo">Desplazamiento Forzado</div>
+        <div class="tipo-desc">Fueron las que más sufrieron el desarraigo. Al llegar a las ciudades, muchas debían sostener familias enteras solas, en condiciones de pobreza extrema y sin redes de apoyo. El desplazamiento destruyó sus proyectos de vida, sus tierras y sus comunidades.</div>
+        <div class="tipo-dato">▶ 51% del total de desplazados eran mujeres · 2.700.000 entre 1995–2011</div>
+      </div>
+    </div>
+    <div class="tipo">
+      <div class="tipo-emoji">⛓️</div>
+      <div>
+        <div class="tipo-titulo">Esclavitud Sexual en Cautiverio</div>
+        <div class="tipo-desc">Mujeres secuestradas fueron sometidas a esclavitud sexual dentro de los campamentos guerrilleros. Se documentaron embarazos forzados y abortos obligados bajo amenaza de muerte. Esto ocurrió en todos los grupos, pero principalmente en las FARC.</div>
+        <div class="tipo-dato">▶ La Comisión de la Verdad documentó tortura sexual en estado de embarazo · 3% de casos FARC</div>
+      </div>
+    </div>
+    <div class="tipo">
+      <div class="tipo-emoji">💣</div>
+      <div>
+        <div class="tipo-titulo">Abortos Forzados</div>
+        <div class="tipo-desc">Dentro de las FARC, las guerrilleras embarazadas eran obligadas a abortar. Era una política sistemática del grupo para mantener la "operatividad" de sus unidades. Las que se negaban eran amenazadas o ejecutadas. La JEP investiga esto como crimen de lesa humanidad.</div>
+        <div class="tipo-dato">▶ JEP investiga abortos forzados dentro de las FARC como crimen de lesa humanidad · 2022</div>
+      </div>
+    </div>
+    <div class="tipo">
+      <div class="tipo-emoji">🔫</div>
+      <div>
+        <div class="tipo-titulo">Asesinato de Lideresas</div>
+        <div class="tipo-desc">Las mujeres que se atrevieron a defender a sus comunidades, reclamar tierras o denunciar grupos armados fueron silenciadas con mayor brutalidad. El asesinato de una lideresa envía un mensaje de terror a todas las demás mujeres de la región.</div>
+        <div class="tipo-dato">▶ +133% aumento asesinato lideresas 2016–2018, DESPUÉS del acuerdo de paz · Somos Defensores</div>
+      </div>
+    </div>
+    <div class="tipo">
+      <div class="tipo-emoji">👶</div>
+      <div>
+        <div class="tipo-titulo">Reclutamiento Forzado de Niñas</div>
+        <div class="tipo-desc">Las niñas reclutadas sufrían una doble violencia: como combatientes y como víctimas de abuso sexual dentro de los grupos. Muchas fueron violadas por comandantes. La JEP estableció que esto fue una práctica sistemática, no casos aislados.</div>
+        <div class="tipo-dato">▶ JEP Caso 007: niñas reclutadas sufrieron violencia sexual sistemática dentro de las FARC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIAS -->
+<section class="sec sec-alt reveal">
+  <p class="sec-tag">// 04 — sus historias</p>
+  <h2 class="sec-title">ELLAS<br><em>existen</em></h2>
+
+  <div class="historias-list">
+
+    <div class="historia">
+      <div class="hist-nombre">Fabiola Lalinde</div>
+      <div class="hist-meta">🌸 Madre · Buscadora de su hijo desaparecido · Caso Operación Sirirí</div>
+      <p class="hist-texto">
+        Su hijo Luis Fernando fue desaparecido por el Ejército en 1984.
+        Durante 12 años recorrió Colombia buscándolo sola, documentando su caso.
+        Creó la "Operación Sirirí" — un método de búsqueda que llevaría su nombre.
+        Encontró sus restos en 1996. Su lucha cambió la forma en que Colombia entiende la búsqueda de desaparecidos.
+      </p>
+      <span class="hist-resultado">✊ Su método es usado hoy por la Unidad de Búsqueda de Personas Desaparecidas</span>
+    </div>
+
+    <div class="historia">
+      <div class="hist-nombre">"Valentina" (identidad protegida)</div>
+      <div class="hist-meta">⛓ Exniña guerrillera · Reclutada a los 13 años · Frente 36 FARC</div>
+      <p class="hist-texto">
+        "Cuando entré tenía 13 años. Me dijeron que iba a luchar por los pobres.
+        A los tres meses ya había visto morir a dos compañeras.
+        El comandante decidía quién dormía con quién. 
+        Nadie podía decir que no. Si quedabas embarazada, te hacían abortar."
+      </p>
+      <span class="hist-resultado">▶ Testimonio ante la JEP · Caso 007 · 2021</span>
+    </div>
+
+    <div class="historia">
+      <div class="hist-nombre">Francia Márquez</div>
+      <div class="hist-meta">🌿 Lideresa afrocolombiana · Cauca · Premio Goldman de Medio Ambiente 2018</div>
+      <p class="hist-texto">
+        Líder de la comunidad de La Toma, Cauca, amenazada múltiples veces por grupos armados
+        y mineros ilegales. Sobrevivió un atentado en 2019 en el que murieron dos de sus escoltas.
+        Su lucha por el territorio y contra la violencia le valió el premio más importante
+        del ambientalismo mundial — y la Vicepresidencia de Colombia en 2022.
+      </p>
+      <span class="hist-resultado">✊ Premio Goldman 2018 · Vicepresidenta de Colombia 2022</span>
+    </div>
+
+    <div class="historia">
+      <div class="hist-nombre">Las Madres de Soacha</div>
+      <div class="hist-meta">💔 Madres de víctimas de "falsos positivos" · Bogotá · 2008</div>
+      <p class="hist-texto">
+        Cuando sus hijos jóvenes desaparecieron de Soacha, el Ejército los presentó
+        como guerrilleros dados de baja en combate. Ellas, sin recursos ni educación formal,
+        investigaron solas, viajaron a regiones remotas y demostraron el crimen.
+        Su valentía destapó el escándalo de los 6.402 "falsos positivos" en Colombia.
+      </p>
+      <span class="hist-resultado">✊ Su denuncia llevó a la condena de decenas de militares</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESISTENCIA -->
+<section class="sec reveal">
+  <p class="sec-tag">// 05 — pero resistieron</p>
+  <h2 class="sec-title">LA FUERZA<br><em>de las mujeres</em></h2>
+
+  <p style="font-size:.95rem;font-weight:300;font-style:italic;color:var(--texto);line-height:1.75;margin-bottom:1.5rem;">
+    A pesar de ser las más golpeadas, las mujeres colombianas fueron también
+    las más resistentes. Construyeron organizaciones, exigieron verdad y
+    se convirtieron en pilares de sus comunidades cuando todo lo demás colapsó.
+  </p>
+
+  <div class="resist-grid">
+    <div class="resist-card">
+      <span class="rc-emoji">🕯️</span>
+      <div class="rc-titulo">COSTURERO DE LA MEMORIA</div>
+      <div class="rc-desc">Mujeres de Soacha bordan la historia del conflicto para no olvidar y exigir justicia</div>
+    </div>
+    <div class="resist-card">
+      <span class="rc-emoji">🌿</span>
+      <div class="rc-titulo">RUTA PACÍFICA</div>
+      <div class="rc-desc">700 organizaciones de mujeres que exigieron la paz durante décadas de guerra activa</div>
+    </div>
+    <div class="resist-card">
+      <span class="rc-emoji">⚖️</span>
+      <div class="rc-titulo">CORPORACIÓN SISMA MUJER</div>
+      <div class="rc-desc">Litigaron por los derechos de las mujeres víctimas ante la Corte Constitucional</div>
+    </div>
+    <div class="resist-card">
+      <span class="rc-emoji">📻</span>
+      <div class="rc-titulo">RADIOS COMUNITARIAS</div>
+      <div class="rc-desc">Mujeres indígenas y afro crearon medios propios para visibilizar lo que nadie contaba</div>
+    </div>
+    <div class="resist-card">
+      <span class="rc-emoji">🌸</span>
+      <div class="rc-titulo">MUJERES FARIANAS</div>
+      <div class="rc-desc">Excombatientes que hoy construyen proyectos de paz y denuncian la violencia interna que sufrieron</div>
+    </div>
+    <div class="resist-card">
+      <span class="rc-emoji">🏛️</span>
+      <div class="rc-titulo">COMISIÓN DE LA VERDAD</div>
+      <div class="rc-desc">Las mujeres fueron el 60% de los testimonios. Sin ellas, la verdad habría sido incompleta</div>
+    </div>
+  </div>
+</section>
+
+<!-- LIDERESAS ASESINADAS -->
+<section class="sec sec-alt reveal">
+  <p class="sec-tag">// 06 — las que pagaron con su vida</p>
+  <h2 class="sec-title">LAS QUE<br><em>no callaron</em></h2>
+  <p style="font-family:'Courier Prime',monospace;font-size:.6rem;color:var(--dim);letter-spacing:.08em;margin-bottom:1.2rem;">
+    LIDERESAS ASESINADAS DESPUÉS DEL ACUERDO DE PAZ · 2016–2024
+  </p>
+
+  <div class="lideresas-list">
+    <div class="lideresa">
+      <div class="ld-dot"></div>
+      <div class="ld-nombre">Berta Soler</div>
+      <div class="ld-dato">Lideresa campesina · Antioquia · Asesinada 2017 · Reclamante de tierras</div>
+    </div>
+    <div class="lideresa">
+      <div class="ld-dot"></div>
+      <div class="ld-nombre">Maritza Quiroz</div>
+      <div class="ld-dato">Lideresa social · Bolívar · Asesinada 2018 · Defensora de comunidades rurales</div>
+    </div>
+    <div class="lideresa">
+      <div class="ld-dot"></div>
+      <div class="ld-nombre">Luz Marina Arango</div>
+      <div class="ld-dato">Lideresa indígena · Cauca · Asesinada 2019 · Guardiana del territorio</div>
+    </div>
+    <div class="lideresa">
+      <div class="ld-dot"></div>
+      <div class="ld-nombre">Sandra Muñoz</div>
+      <div class="ld-dato">Lideresa afro · Chocó · Asesinada 2020 · Defensora de derechos étnicos</div>
+    </div>
+    <div class="lideresa">
+      <div class="ld-dot"></div>
+      <div class="ld-nombre">+300 más</div>
+      <div class="ld-dato">Lideresas asesinadas 2016–2024 · Indepaz · Sus nombres merecen ser recordados</div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.3rem;background:rgba(255,69,96,.07);border:1px solid rgba(255,69,96,.25);border-radius:4px;padding:1.2rem;">
+    <p style="font-size:.9rem;font-weight:300;font-style:italic;line-height:1.75;color:var(--texto);">
+      <strong style="color:var(--rojo);font-style:normal;">El asesinato de una lideresa no es un crimen aislado.</strong>
+      Es un mensaje de terror: "si hablas, mueres". 
+      Los grupos armados las eligen precisamente porque su muerte paraliza a toda una comunidad.
+      Por eso recordarlas es un acto de resistencia.
+    </p>
+  </div>
+</section>
+
+<!-- REFLEXIÓN -->
+<section class="ref-sec reveal">
+  <span class="ref-flores">🌸 🕊️ 🌺</span>
+  <blockquote class="ref-quote">
+    "La guerrilla que decía luchar por el pueblo
+    violó, desplazó y silenció a las mujeres de ese mismo pueblo.
+    Honrar a las víctimas significa llamar a sus verdugos
+    por lo que son — sin importar qué discurso usaron."
+  </blockquote>
+  <p class="ref-cite">— COLOMBIA SIN VENDA · Día 8 de 20</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec reveal">
+  <h2 class="cta-title">Sus nombres<br><em>importan</em></h2>
+  <p class="cta-body">
+    Comparte este día con alguien que crea que la guerra fue "cosa de hombres".
+    Las mujeres fueron las más afectadas — y las menos nombradas.
+  </p>
+  <a id="btn-wa" class="btn-wa" href="#" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Compartir en WhatsApp
+  </a>
+  <div class="nav-dias">
+    ← DÍA 07: Las Mentiras · PRÓXIMO → <span>DÍA 09: Héroes sin Capa</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Desarrollada por <strong>Vibras Positivas HM</strong> — Derechos de Autor Reservados<br>
+  Caucasia, Antioquia · Colombia · 2026<br>
+  Fuentes: ONU Mujeres Colombia · CNMH · JEP · Somos Defensores · Comisión de la Verdad · Indepaz
+</footer>
+
+<!-- MANIFEST -->
+<script>
+const m={name:"Colombia Sin Venda",short_name:"Sin Venda",
+description:"20 días de verdad sobre el conflicto armado colombiano",
+start_url:"./",display:"standalone",
+background_color:"#0f0008",theme_color:"#ff6eb4",
+icons:[
+  {src:"https://placehold.co/192x192/ff6eb4/ffffff?text=CSV",sizes:"192x192",type:"image/png"},
+  {src:"https://placehold.co/512x512/ff6eb4/ffffff?text=CSV",sizes:"512x512",type:"image/png"}
+]};
+document.getElementById('manifest-link').href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:'application/json'}));
+</script>
+<script>
+if('serviceWorker' in navigator){
+  const sw=`const C='csv-dia08-v1';
+  self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll([location.href]))));
+  self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));`;
+  navigator.serviceWorker.register(URL.createObjectURL(new Blob([sw],{type:'application/javascript'}))).catch(()=>{});
+}
+</script>
+
+<script>
+// PETALS BG
+const pEl=document.getElementById('petals');
+const emojis=['🌸','🌺','🕊️','🌼','💐'];
+for(let i=0;i<20;i++){
+  const p=document.createElement('span');
+  p.style.cssText=`
+    position:absolute;
+    left:${Math.random()*100}%;
+    animation-duration:${8+Math.random()*12}s;
+    animation-delay:${Math.random()*10}s;
+    font-size:${1+Math.random()*1.5}rem;
+  `;
+  p.className='petal';
+  p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  pEl.appendChild(p);
+}
+
+// DOTS
+const dotsEl=document.getElementById('dots');
+for(let i=1;i<=20;i++){
+  const d=document.createElement('div');
+  d.className='dot'+(i<8?' done':'')+(i===8?' hoy':'');
+  dotsEl.appendChild(d);
+}
+
+// REVEAL
+const ro=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');ro.unobserve(x.target);}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// COUNTERS
+function animCount(el,target,dur=2000){
+  let started=false;
+  const co=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&!started){
+      started=true;
+      const t0=performance.now();
+      const upd=now=>{
+        const p=Math.min((now-t0)/dur,1);
+        const e=1-Math.pow(1-p,3);
+        const val=Math.floor(e*target);
+        el.textContent=val.toLocaleString('es-CO');
+        if(p<1)requestAnimationFrame(upd);
+      };
+      requestAnimationFrame(upd);
+    }
+  },{threshold:.5});
+  co.observe(el);
+}
+document.querySelectorAll('.counter').forEach(el=>{
+  animCount(el,parseInt(el.dataset.target));
+});
+
+// BARRAS
+const bo=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      setTimeout(()=>x.target.style.width=x.target.dataset.w+'%',200);
+      bo.unobserve(x.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.vs-fill').forEach(el=>bo.observe(el));
+
+// INSTALL
+let dp;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;document.getElementById('install-banner').classList.add('on');});
+document.getElementById('btn-inst').addEventListener('click',async()=>{if(!dp)return;dp.prompt();await dp.userChoice;dp=null;document.getElementById('install-banner').classList.remove('on');});
+document.getElementById('btn-x').addEventListener('click',()=>document.getElementById('install-banner').classList.remove('on'));
+
+// WHATSAPP
+document.getElementById('btn-wa').href='https://wa.me/?text='+encodeURIComponent(
+  '🇨🇴 *COLOMBIA SIN VENDA — Día 8*\n'+
+  '"Las Mujeres del Conflicto"\n\n'+
+  '400.000 mujeres víctimas de homicidio. 2,7 millones desplazadas.\n'+
+  '53% de la violencia sexual cometida por la guerrilla.\n'+
+  'La historia que nadie cuenta — con datos de ONU Mujeres, CNMH y la Comisión de la Verdad.\n\n'+
+  '📲 Comparte con alguien que crea que la guerra fue "cosa de hombres".'
+);
+</script>
+</body>
+</html>
